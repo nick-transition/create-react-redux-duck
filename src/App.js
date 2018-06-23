@@ -7,18 +7,17 @@ import './App.css';
 class App extends Component {
   constructor(props){
     super(props)
-    const {dispatch} = props;
-    this.load = bindActionCreators({load}, dispatch)
+    // const {dispatch} = props;
+    // this.load = bindActionCreators({load}, dispatch)
 
   }
   componentDidMount(){
-    const {dispatch} = this.props;
-    let action = load(dispatch)
-    dispatch(action)
+    // const {dispatch} = this.props;
+    // let action = load()
+    this.props.load()
   }
   static renderImages(array){
     return array.map(item => {
-      console.log(item)
       return (
         <img key={item.filename} src={`https://picsum.photos/458/354?image=${item.id}`} className="img-fluid" />
       )
@@ -40,4 +39,4 @@ function mapStateToProps(state){
   return state
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps,{load})(App);
