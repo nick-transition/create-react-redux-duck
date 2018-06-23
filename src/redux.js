@@ -35,9 +35,10 @@ export default function info(state = initialState, action = {}) {
 
 
 export function load() {
-  // dispatch({type:LOAD})
+  
   
   return (dispatch) => {
+    dispatch({type:LOAD})
     return fetch('https://picsum.photos/list')
       .then(res => {
         return res.json()
