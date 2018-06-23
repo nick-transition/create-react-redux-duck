@@ -1,0 +1,17 @@
+.container {
+    background: #f9f9f9;
+}
+
+.img-fluid {
+    max-width: 260px;
+    max-height: 200px;
+}
+
+img {
+    margin: 5px;
+}
+
+.scale {
+    transform: scaleY(1.05);
+    padding-top: 5px; 
+}
